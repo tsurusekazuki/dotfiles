@@ -12,9 +12,11 @@
 [commit]
     template = /Users/tsurusekazuki/.stCommitMsg
 [alias]
-  a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+  a = add
   d = diff
   co = checkout
+  swc = switch -c
+  sw = switch
   ci = commit
   ca = commit -a
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
