@@ -22,12 +22,15 @@ if &compatible
 endif    
 
 " Pluginディレクトリのパス    
-let s:dein_dir = expand('~/.vim/dein')    
+let s:dein_dir = expand('~/.vim/dein')
+" anyenvのパス
+let s:anyenv_dir = expand('~/.anyenv/envs')
 " dein.vimのパス    
 let s:dein_repo_dir = s:dein_dir .  '/repos/github.com/Shougo/dein.vim'    
 " tomlのディレクトリへのパス    
 let s:toml_dir = expand('~/.config/nvim')    
-
+" Pythonのパス
+let g:python3_host_prog = s:anyenv_dir .  '/pyenv/versions/3.8.3/bin/python3.8'
 " Required:    
 execute 'set runtimepath^=' . s:dein_repo_dir    
 
@@ -40,6 +43,10 @@ if dein#load_state(s:dein_dir)
 
   " 利用時に読み込むプラグインのtoml
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+
+  call dein#load_toml(s:toml_dir . '/dein_python.toml', {'lazy': 1})
+
+  call dein#load_toml(s:toml_dir . '/dein_frontend.toml', {'lazy': 1})
 
   " Required:               
   call dein#end()           
