@@ -19,7 +19,7 @@ set shiftwidth=2                                                " tabの幅
 " ------------------------------------------------------------
 if &compatible    
   set nocompatible               " Be iMproved    
-endif    
+endif
 
 " Pluginディレクトリのパス    
 let s:dein_dir = expand('~/.vim/dein')
@@ -43,8 +43,9 @@ if dein#load_state(s:dein_dir)
 
   " 利用時に読み込むプラグインのtoml
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
-
-  "call dein#load_toml(s:toml_dir . '/dein_python.toml', {'lazy': 1})
+  if has('python3')
+    call dein#load_toml(s:toml_dir . '/dein_python.toml', {'lazy': 1})
+  endif
 
   " call dein#load_toml(s:toml_dir . '/dein_frontend.toml', {'lazy': 1})
 
