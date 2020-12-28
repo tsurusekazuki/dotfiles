@@ -47,8 +47,8 @@ if dein#load_state(s:dein_dir)
    " call dein#load_toml(s:toml_dir . '/dein_python.toml', {'lazy': 1})
   "endif
 
-  " call dein#load_toml(s:toml_dir . '/dein_frontend.toml', {'lazy': 1})
-
+  call dein#add('lambdalisue/fern.vim')
+  
   " Required:               
   call dein#end()           
   call dein#save_state()    
@@ -83,6 +83,7 @@ nnoremap K :<C-u>LspHover<CR>
 " 名前変更
 nnoremap <LocalLeader>R :<C-u>LspRename<CR>
 " 参照検索
+" p
 nnoremap <LocalLeader>n :<C-u>LspReferences<CR>
 " Lint結果をQuickFixで表示
 nnoremap <LocalLeader>f :<C-u>LspDocumentDiagnostics<CR>
@@ -92,7 +93,7 @@ nnoremap <LocalLeader>s :<C-u>LspDocumentFormat<CR>
 set omnifunc=lsp#complete
 
 " Required:                  
-filetype plugin indent on                                   
+filetype plugin indent on
 
 " If you want to install not installed plugins on startup.    
 if dein#check_install()                                       
