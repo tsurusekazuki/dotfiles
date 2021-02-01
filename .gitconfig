@@ -2,7 +2,29 @@
 	name = tsurusekazuki
 	email = b1714935@planet.kanazawa-it.ac.jp
 [core]
-	excludesfile = /Users/tsurusekazuki/.gitignore_global
+  pager = delta
+  excludesfile = /Users/tsurusekazuki/.gitignore_global
+  quotepath = false
+[delta]
+  features = unobtrusive-line-numbers decorations
+  whitespace-error-style = 22 reverse
+  side-by-side = true
+[delta "unobtrusive-line-numbers"]
+  line-numbers = true
+  line-numbers-minus-style = "#444444"
+  line-numbers-zero-style = "#444444"
+  line-numbers-plus-style = "#444444"
+  line-numbers-left-format = "{nm:>4}┊"
+  line-numbers-right-format = "{np:>4}│"
+  line-numbers-left-style = blue
+  line-numbers-right-style = blue
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = yellow box
+[interactive]
+  diffFilter = delta --color-only
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -13,7 +35,7 @@
     template = /Users/tsurusekazuki/.stCommitMsg
 [alias]
   a = add
-  d = diff --word-diff
+  d = diff
   co = checkout
   swc = switch -c
   sw = switch
