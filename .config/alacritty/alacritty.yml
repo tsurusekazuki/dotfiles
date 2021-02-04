@@ -29,6 +29,6 @@ colors:
     white:   '#ebdbb2'
 window:
   decorations: full         # ボーダーとタイトルバーを表示する
-  startup_mode: Fullscreen  # フルスクリーンで起動する
+  startup_mode: Windowed    # スクリーンサイズはデフォルト
 background_opacity: 0.95    # 背景を透過させる
 
